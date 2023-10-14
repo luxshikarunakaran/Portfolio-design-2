@@ -1,12 +1,15 @@
 $(document).ready(function(){
+
     $('#menu').click(function(){
-        $this.toggleClass('fa-times');
-        $('header').toggleClass(toggle);
+        $(this).toggleClass('fa-times');
+        $('header').toggleClass('toggle');
     });
+
+
 
     $(window).on('scroll load',function(){
         $('#menu').removeClass('fa-times');
-        $('header').toggleClass(toggle);
+        $('header').removeClass('toggle');
 
 
         if( $(window).scrollTop()>0){
@@ -21,9 +24,10 @@ $(document).ready(function(){
     //smooth scroling
 
     $('a[href*="#"]').on('click',function(e){
+
         e.preventDefault();
 
-        $('html','body').animate({
+        $('html,body').animate({
             scrollTop : $($(this).attr('href')).offset().top,
         },
 
@@ -31,6 +35,7 @@ $(document).ready(function(){
         'linear'
         
         );
+
     });
 
 });
